@@ -1,0 +1,241 @@
+@import "mixins";
+@import "../fonts/fonts";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: 0.3s linear;
+  color: $text_color;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  color: $text_color;
+}
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  font-weight: $norm;
+}
+.header {
+  padding-top: 10px;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &:after {
+      content: "";
+      max-width: 1140px;
+      width: calc(100% - 30px);
+      height: 2px;
+      background-color: $line_color;
+      display: block;
+      position: absolute;
+      bottom: -15px;
+    }
+  }
+  &__menu {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    padding: 10px 10px;
+    border-radius: 5px;
+    &:hover {
+      background-color: $link_color;
+    }
+  }
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__map {
+    display: flex;
+
+    &-svg {
+      width: 20px;
+      height: 20px;
+      fill: $main_color;
+    }
+    &-text {
+      margin-left: 5px;
+    }
+  }
+  &__tel {
+    margin-left: 20px;
+    &-img {
+      width: 24px;
+      height: 24px;
+      transform: translate(0, 5px);
+    }
+    &-text {
+      margin-left: 5px;
+      font-size: 24px;
+    }
+    & a {
+      color: $text_color;
+      span {
+        color: $main_color;
+      }
+    }
+  }
+}
+.sub-header {
+  box-shadow: 0 4px 10px -10px rgb(40 40 40 / 30%);
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+  }
+  &__logo {
+    width: 150px;
+    height: 50px;
+  }
+  &__form {
+    position: relative;
+    margin-right: 320px;
+  }
+  &__search {
+    border: 2px solid $main_color;
+    border-radius: 5px;
+    height: 40px;
+    width: 400px;
+    padding-left: 20px;
+    font-size: 18px;
+    &:focus-visible {
+      outline: none;
+    }
+    &:focus {
+      border-color: $secodary_color;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
+        0 0 8px rgb(102 175 233 / 60%);
+    }
+  }
+  &__batton {
+    width: 40px;
+    height: 40px;
+    background-color: $main_color;
+    border: none;
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
+        0 0 8px rgb(102 175 233 / 60%);
+      background-color: $secodary_color;
+    }
+  }
+  &__svg {
+    width: 18px;
+    height: 18px;
+    fill: $white_color;
+  }
+  &__cort {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    &-img {
+      width: 25px;
+      height: 25px;
+    }
+    &-text {
+      font-size: 15px;
+      margin-left: 5px;
+    }
+  }
+}
+.main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $fon_color;
+
+  &__tittle {
+    text-align: center;
+    padding: 20px 0;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__sub-menu {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    max-width: 230px;
+    margin-top: 80px;
+  }
+  &__link {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: underline;
+    font-size: 14px;
+    &:hover {
+      background-color: $link_color;
+    }
+  }
+  &__goods {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h1 {
+      font-weight: $max;
+      width: 100%;
+    }
+  }
+  &__category {
+    width: 32%;
+    max-width: 370px;
+    height: 100%;
+    max-height: 130px;
+    background-color: $white_color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border: 1px solid $fon_color;
+
+    &:hover {
+      opacity: 0.9;
+      border: 1px solid $link_color;
+      box-shadow: 0 0 5px $link_color;
+      transform: scale(1.1);
+    }
+    &-text {
+      width: 45%;
+      font-size: 14px;
+      margin-left: 5px;
+      margin-top: 10px;
+      font-weight: $min;
+      span {
+        margin-top: 10px;
+        background: $link_color;
+        border-radius: 5px;
+      }
+    }
+    &-image {
+      width: 55%;
+      img {
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}
